@@ -15,7 +15,8 @@
         <script type="text/javascript" src="./Love_files/love.js" charset="utf-8"></script>
 
     </head>
-    <body>
+    <body onload="onload()">
+        <audio src="520.mp3" hidden="true" autostart="true" loop="true" id="player"></audio>
         <div id="main">
             <div id="error">亲，您使用的浏览器无法支持即将显示的内容，请换成谷歌(<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>)或者火狐(<a href="http://firefox.com.cn/download/">Firefox</a>)浏览器哟~</div>
             <div id="wrap">
@@ -45,17 +46,13 @@
                     </div>
                 </div>
                 <div id="clock-box">
-                    <a href="你的个人链接" target="_blank">@Marionxue</a> 与 <a href="https://www.kubemaster.top/520" target="_blank">@丫头</a> 在一起的
+                    <a href="你的个人链接" target="_blank">@你</a> 与 <a href="https://www.devopsman.cn/520" target="_blank">@她</a> 在一起的
                         <div id="clock"></div>
                 </div>
                 <canvas id="canvas" width="1100" height="680"></canvas>
             </div>
-            <audio src="love.mp3" autoplay="autoplay"></audio>
-        </div>
-    
-    <script>
-    </script>
 
+        </div>
     <script>
     (function(){
         var canvas = $('#canvas');
@@ -214,6 +211,17 @@
 
         runAsync().start();
     })();
+
+    window.onload=function(){
+        if(document.readyState == "complete"){
+            var player=document.getElementById("player");
+            if(player.paused)                     {
+                player.play();//audio.play();// 这个就是播放
+            }else{
+                player.pause();// 这个就是暂停
+            }
+        }
+    }
     </script>
 
 
